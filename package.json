@@ -1,0 +1,26 @@
+{
+  "name": "bff-allthethings",
+  "version": "0.0.0",
+  "description": "bff for allthethings",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshclyde/bff-allthethings.git"
+  },
+  "author": "Josh Clyde",
+  "license": "ISC",
+  "dependencies": {
+    "@types/koa": "2.0.46",
+    "koa": "2.5.2",
+    "@types/koa-router": "7.0.30",
+    "koa-router": "7.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.2",
+    "ts-node": "7.0.0",
+    "typescript": "2.9.2"
+  }
+}
