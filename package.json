@@ -4,7 +4,11 @@
   "description": "bff for allthethings",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/index.ts"
+    "start": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/index.ts",
+    "lint": "./node_modules/.bin/tslint -p tsconfig.json \"src/**/*.ts\"",
+    "precommit": "npm run prettier:diff && npm run lint",
+    "prettier:write": "./node_modules/.bin/prettier --write \"src/**/*.ts\"",
+    "prettier:diff": "./node_modules/.bin/prettier --list-different \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -19,8 +23,11 @@
     "koa-router": "7.4.0"
   },
   "devDependencies": {
+    "husky": "0.14.3",
     "nodemon": "1.18.2",
+    "prettier": "1.13.7",
     "ts-node": "7.0.0",
+    "tslint": "5.10.0",
     "typescript": "2.9.2"
   }
 }
